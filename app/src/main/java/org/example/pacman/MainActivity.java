@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,14 +35,43 @@ public class MainActivity extends Activity {
 
         game.newGame();
 
+        ImageButton buttonUp = findViewById(R.id.moveUp);
+        //listener of our pacman, when somebody clicks it
+        buttonUp.setOnClickListener(new View.OnClickListener() {
 
-        Button buttonRight = findViewById(R.id.moveRight);
+            @Override
+            public void onClick(View v) {
+                game.movePacmanUp(-50);
+            }
+        });
+
+        ImageButton buttonLeft = findViewById(R.id.moveLeft);
+        //listener of our pacman, when somebody clicks it
+        buttonLeft.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                game.movePacmanLeft(-50);
+            }
+        });
+
+        ImageButton buttonRight = findViewById(R.id.moveRight);
         //listener of our pacman, when somebody clicks it
         buttonRight.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                game.movePacmanRight(10);
+                game.movePacmanRight(50);
+            }
+        });
+
+        ImageButton buttonDown = findViewById(R.id.moveDown);
+        //listener of our pacman, when somebody clicks it
+        buttonDown.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                game.movePacmanDown(50);
             }
         });
 

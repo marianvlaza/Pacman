@@ -20,6 +20,14 @@ public class Game {
 
     //bitmap of the pacman
     private Bitmap pacBitmap;
+    //bitmap of the arrowUp
+    private Bitmap arrowUpBitmap;
+    //bitmap of the arrowDown
+    private Bitmap arrowDownBitmap;
+    //bitmap of the arrowLeft
+    private Bitmap arrowLeftBitmap;
+    //bitmap of the Wright
+    private Bitmap arrowWrightBitmap;
     //textview reference to points
     private TextView pointsView;
     private int pacx, pacy;
@@ -34,6 +42,10 @@ public class Game {
         this.context = context;
         this.pointsView = view;
         pacBitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.pacman);
+        arrowUpBitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.up);
+        arrowDownBitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.down);
+        arrowLeftBitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.left);
+        arrowWrightBitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.wright);
 
     }
 
@@ -43,6 +55,7 @@ public class Game {
     }
 
     //TODO initialize goldcoins also here
+
     public void newGame()
     {
         pacx = 50;
@@ -59,11 +72,41 @@ public class Game {
         this.w = w;
     }
 
+    public void movePacmanUp(int pixels)
+    {
+        //still within our boundaries?
+        if (pacy+pixels+pacBitmap.getHeight()<h && pacy+pixels>0) {
+            pacy = pacy + pixels;
+            doCollisionCheck();
+            gameView.invalidate();
+        }
+    }
+
+    public void movePacmanLeft(int pixels)
+    {
+        //still within our boundaries?
+        if (pacx+pixels+pacBitmap.getWidth()<w && pacx+pixels>0) {
+            pacx = pacx + pixels;
+            doCollisionCheck();
+            gameView.invalidate();
+        }
+    }
+
     public void movePacmanRight(int pixels)
     {
         //still within our boundaries?
-        if (pacx+pixels+pacBitmap.getWidth()<w) {
+        if (pacx+pixels+pacBitmap.getWidth()<w && pacx+pixels>0) {
             pacx = pacx + pixels;
+            doCollisionCheck();
+            gameView.invalidate();
+        }
+    }
+
+    public void movePacmanDown(int pixels)
+    {
+        //still within our boundaries?
+        if (pacy+pixels+pacBitmap.getHeight()<h && pacy+pixels>0) {
+            pacy = pacy + pixels;
             doCollisionCheck();
             gameView.invalidate();
         }

@@ -43,7 +43,7 @@ public class GameView extends View {
 	//drawn whenever we update the screen.
 	@Override
 	protected void onDraw(Canvas canvas) {
-		//Here we get the height and weight
+		//Here we get the height and width
 		h = canvas.getHeight();
 		w = canvas.getWidth();
 		//update the size for the canvas to the game.
