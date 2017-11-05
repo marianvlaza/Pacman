@@ -162,15 +162,11 @@ public class Game {
         if (getCoins().size() ==0) {
 
             GoldCoin coin1 = new GoldCoin(300, 170);
-            GoldCoin coin2 = new GoldCoin(1200, 270);
+            GoldCoin coin2 = new GoldCoin(670, 270);
             GoldCoin coin3 = new GoldCoin(500, 370);
-            GoldCoin coin4 = new GoldCoin(400, 600);
+            GoldCoin coin4 = new GoldCoin(400, 455);
             GoldCoin coin5 = new GoldCoin(550, 100);
-            GoldCoin coin6 = new GoldCoin(780, 800);
-            GoldCoin coin7 = new GoldCoin(800, 655);
-            GoldCoin coin8 = new GoldCoin(970, 750);
-            GoldCoin coin9 = new GoldCoin(300, 845);
-            GoldCoin coin10 = new GoldCoin(820, 480);
+            GoldCoin coin6 = new GoldCoin(780, 520);
 
             coins.add(coin1);
             coins.add(coin2);
@@ -178,10 +174,6 @@ public class Game {
             coins.add(coin4);
             coins.add(coin5);
             coins.add(coin6);
-            coins.add(coin7);
-            coins.add(coin8);
-            coins.add(coin9);
-            coins.add(coin10);
 
         }
 
@@ -189,7 +181,7 @@ public class Game {
         if (getEnemies().size() ==0) {
 
             Enemy enemy1 = new Enemy(0, 430);
-            Enemy enemy2 = new Enemy(430, 780);
+            Enemy enemy2 = new Enemy(300, 250);
 
             enemies.add(enemy1);
             enemies.add(enemy2);
