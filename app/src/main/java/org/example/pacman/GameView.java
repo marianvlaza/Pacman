@@ -26,13 +26,11 @@ public class GameView extends View {
 	 */
 	public GameView(Context context) {
 		super(context);
-
 	}
 
 	public GameView(Context context, AttributeSet attrs) {
 		super(context,attrs);
 	}
-
 
 	public GameView(Context context, AttributeSet attrs, int defStyleAttr)
 	{
@@ -55,6 +53,19 @@ public class GameView extends View {
 
 		//draw the pacman
 		canvas.drawBitmap(game.getPacBitmap(), game.getPacx(),game.getPacy(), paint);
+
+		//draw the coin
+		for (GoldCoin coin: game.getCoins()){
+			if (!coin.isColected()){
+				canvas.drawBitmap(game.getCoinBitmap(), coin.getCoinX(),coin.getCoinY(), paint);
+			}
+		}
+
+		//draw the enemy
+		for (Enemy enemy: game.getEnemies()){
+			canvas.drawBitmap(game.getEnemyBitmap(), enemy.getEnemyX(), enemy.getEnemyY(), paint);
+		}
+
 		super.onDraw(canvas);
 	}
 

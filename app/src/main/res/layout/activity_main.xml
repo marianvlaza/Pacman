@@ -18,7 +18,7 @@
         <org.example.pacman.GameView
             android:id="@+id/gameView"
             android:layout_width="wrap_content"
-            android:layout_height="410dp">
+            android:layout_height="275dp">
 
         </org.example.pacman.GameView>
 
@@ -35,6 +35,20 @@
                 android:text="New Game"
                 android:layout_gravity="center"
                 android:id="@+id/newGame"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pause Game"
+                android:layout_gravity="center"
+                android:id="@+id/pauseGame"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Resume Game"
+                android:layout_gravity="center"
+                android:id="@+id/resumeGame"/>
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -68,7 +82,7 @@
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/wright"
+                    android:src="@drawable/right"
                     android:layout_weight="1"
                     android:id="@+id/moveRight"/>
 

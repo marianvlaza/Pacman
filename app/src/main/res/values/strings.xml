@@ -6,4 +6,7 @@
     <string name="move_right">Right</string>
     <string name="move_down">Down</string>
     <string name="action_settings">Settings</string>
+    <string name="new_game">New Game</string>
+    <string name="pause_game">Pause Game</string>
+    <string name="resume_game">Resume Game</string>
 </resources>
